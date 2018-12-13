@@ -11,6 +11,7 @@ public class Ejercicio1 extends Thread {
         hilo = rm;
     }
     
+    // Ejecución de los hilos
     public void run() {
         
         try {
@@ -26,9 +27,10 @@ public class Ejercicio1 extends Thread {
     }
 
     public static void main(String[] args) {
+        // Creación de los hilos
         Thread t1 = new Ejercicio1("hilo1");
         Thread t2 = new Ejercicio1("hilo2");
-        
+        // Se inician los hilos
         t1.start();
         t2.start();
     }
