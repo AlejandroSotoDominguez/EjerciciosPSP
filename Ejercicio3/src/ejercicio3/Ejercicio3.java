@@ -14,14 +14,17 @@ public class Ejercicio3 extends Thread {
     
     public void run(){
         
+        // Iniciamos el primer hilo
         nombreHilo = getName();
         Thread h1 = new Ejercicio3(nombreHilo);
         System.out.println("Hola "+getName());
         try {  
+            // Muestra su nombre 10 veces
             for(int i=0;i<10;i++){
+                // Dormimos el hilo entre 100 y 600 milisegundos
                 Thread.sleep((int) ((Math.random()*600)+100));
                 System.out.println(nombreHilo);
-
+                // Esperamos a que termine el hilo y creamos e iniciamos el siguiente, y así sucesivamente    
                 if(i==9){
                     System.out.println("Adiós "+nombreHilo);
                     h1.join();
