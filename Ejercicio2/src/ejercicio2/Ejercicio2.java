@@ -11,10 +11,12 @@ public class Ejercicio2 extends Thread {
         hilo = rm;
     }
     
+    // Realizamos un bucle en el que cada hilo escribe su nombre 5 veces
     public void run(){
-        for(int i=0;i<5;i++){
+        for(int i=0;i<=5;i++){
             System.out.println(hilo+" "+i);
             try {
+                // Dormimos los hilos durante 1 segundo
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 ex.getMessage();
