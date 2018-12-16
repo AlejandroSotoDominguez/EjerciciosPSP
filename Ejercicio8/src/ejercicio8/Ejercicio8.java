@@ -120,7 +120,7 @@ public class Ejercicio8 {
                     }catch (InterruptedException ex) {
                         Logger.getLogger(Ejercicio8.class.getName()).log(Level.SEVERE, null, ex);
                     }   
-                    if(tortugaGanador==true || liebreGanador==true){
+                    if(tortugaGanador==true){
                         System.out.println("Tortuga ganadora");
                         posTortuga=70;
                     }
