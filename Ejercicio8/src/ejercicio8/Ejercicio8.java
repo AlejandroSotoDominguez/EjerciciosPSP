@@ -23,12 +23,14 @@ public class Ejercicio8 {
     static class Liebre extends Thread{
         
         public synchronized void run(){
+            // Establecemos la casilla 1 como casilla inicial
             int posLiebre = 1;
             
             while(posLiebre<70){
                 // Generamos un número aleatorio entre 1 y 100 para determinar la probabilidad
                 int aleatorio = (int)(Math.random()*100)+1;
                 movLiebre=true;
+                // Si la tortuga se esta moviendo bloqueamos el hilo esperando a que termine de hacer su movimiento
                 if(movTortuga==true){
                     try {
                         wait(100);
@@ -64,7 +66,7 @@ public class Ejercicio8 {
                     // Desbloqueamos el hilo
                     notify();
                     try {
-                        sleep(10);
+                        sleep(1000);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Ejercicio8.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -82,7 +84,7 @@ public class Ejercicio8 {
         int aleatorio = (int)(Math.random()*100)+1;
         public synchronized void run(){
             int posTortuga = 1;
-           
+            
             while(posTortuga<70){
                 int aleatorio = (int)(Math.random()*100)+1;
                 movTortuga = true;
@@ -114,7 +116,7 @@ public class Ejercicio8 {
                     movTortuga = false;
                     notify(); 
                     try {
-                        sleep(10);
+                        sleep(1000);
                     }catch (InterruptedException ex) {
                         Logger.getLogger(Ejercicio8.class.getName()).log(Level.SEVERE, null, ex);
                     }   
